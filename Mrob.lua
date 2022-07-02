@@ -1,3 +1,4 @@
+
 while not game:IsLoaded() do
   wait(.1)
 end
@@ -141,161 +142,161 @@ local me = plrs.LocalPlayer;
         vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
       end)
 
-    function AIMovementInLobby()
-      local clock = 0
-      local doneMoving = false
-      _G.ai_done = false
-      local zombie = game.Players.LocalPlayer.Character
-      local Zombiehumanoid = zombie.Humanoid
-      spawn(function()
-          local PathfindingService = game:GetService("PathfindingService")
-          local randomWayPoints = {
-            {
-              Vector3.new(29.4448986, 10.6809521, 1005.28198),
-            },
-            {
-              Vector3.new(120.158272, 5.05413818, 1005.26672),
-            },
-            {
-              Vector3.new(145.121567, 4.79999876, 1028.203),
-            },
-            {
-              Vector3.new(138.910416, 4.85120726, 1080.46936),
-            },
-            {
-              Vector3.new(50.0033913, 5.40119982, 1025.59448),
-              Vector3.new(12.7496023, 4.94986296, 1046.24768),
-            },
-            {
-              Vector3.new(56.9857826, 5.10824966, 1066.79846),
-              Vector3.new(40.124321, 5, 1055.27551),
-            },
-            {
-              Vector3.new(28.1154366, 4.8208971, 1041.24829),
-            },
-            {
-              Vector3.new(8.27422428, 4.80000019, 1034.32092),
-              Vector3.new(-36.9196014, 4.80000019, 1022.45972),
-              Vector3.new(-93.4016876, 5.84888077, 1107.07776),
-              Vector3.new(-134.147461, 5.84888077, 1080.1228),
-            },
-            {
-              Vector3.new(8.27422428, 4.80000019, 1034.32092),
-              Vector3.new(-36.9196014, 4.80000019, 1022.45972),
-              Vector3.new(-69.0564728, 5.87887812, 1101.21545),
-            },
-            {
-              Vector3.new(8.27422428, 4.80000019, 1034.32092),
-              Vector3.new(-36.9196014, 4.80000019, 1022.45972),
-              Vector3.new(-57.2358208, 5.81887817, 1059.91345),
-            },
-            {
-              Vector3.new(104.851845, 4.80013657, 1029.08655),
-              Vector3.new(66.5649185, 11.1366758, 981.947205),
-              Vector3.new(58.9183998, 15.5042267, 969.327759),
-            },
-            {
-              Vector3.new(106.917046, 5.1029253, 1033.20129),
-              Vector3.new(126.421371, 4.80742407, 1017.41754),
-              Vector3.new(109.249374, 4.99999857, 998.975525),
-            },
-            {
-              Vector3.new(37.6123543, 5.1142168, 1041.55664),
-              Vector3.new(8.08811092, 11.3835154, 1087.04956),
-              Vector3.new(3.8377471, 4.81672573, 1051.76331),
-            },
-            {
-              Vector3.new(74.2765732, 4.79785824, 1034.74109),
-              Vector3.new(59.2142448, 5, 1081.58557),
-              Vector3.new(23.250845, 5.6657753, 1021.79108),
-            },
-            {
-              Vector3.new(75.4334259, 5.07404947, 1048.54626),
-              Vector3.new(59.5415268, 9.24949932, 1002.75214),
-              Vector3.new(21.7118225, 26.9064331, 982.54895),
-            },
-            {
-              Vector3.new(86.8510361, 4.95114946, 1012.60217),
-              Vector3.new(78.8645248, 5.21786928, 1063.84338),
-              Vector3.new(39.1454849, 5, 1062.37744),
-            },
-            {
-              Vector3.new(85.5781631, 5.19999838, 1044.32336),
-              Vector3.new(7.32494354, 4.79999876, 1031.84668),
-              Vector3.new(-16.918314, 7.10381889, 999.609253),
-            },
-            {
-              Vector3.new(85.5781631, 5.19999838, 1044.32336),
-              Vector3.new(7.32494354, 4.79999876, 1031.84668),
-              Vector3.new(-60.5333252, 4.90647602, 1025.54321),
-            },
-            {
-              Vector3.new(85.5781631, 5.19999838, 1044.32336),
-              Vector3.new(7.32494354, 4.79999876, 1031.84668),
-              Vector3.new(-76.8479233, 4.87704134, 1009.79724),
-            },
-            {
-              Vector3.new(116.443657, 5.34364605, 1031.54187),
-              Vector3.new(136.55043, 4.80000019, 1068.89758),
-              Vector3.new(96.5291367, 5.04907751, 1055.71301),
-            },
-            {
-              Vector3.new(136.55043, 4.80000019, 1068.89758),
-              Vector3.new(96.5291367, 5.04907751, 1055.71301),
-              Vector3.new(116.443657, 5.34364605, 1031.54187),
-            },
-            {
-              Vector3.new(84.3650131, 4.95895767, 1011.05023),
-              Vector3.new(28.3323727, 5.77999735, 1021.42993),
-              Vector3.new(32.4552689, 5, 1067.22888),
-            },
-          }
-          -- Variables for the zombie, its humanoid, and destination
+function AIMovementInLobby()
+  local clock = 0
+  local doneMoving = false
+  _G.ai_done = false
+  local zombie = game.Players.LocalPlayer.Character
+  local Zombiehumanoid = zombie.Humanoid
+  spawn(function()
+      local PathfindingService = game:GetService("PathfindingService")
+      local randomWayPoints = {
+        {
+          Vector3.new(29.4448986, 10.6809521, 1005.28198),
+        },
+        {
+          Vector3.new(120.158272, 5.05413818, 1005.26672),
+        },
+        {
+          Vector3.new(145.121567, 4.79999876, 1028.203),
+        },
+        {
+          Vector3.new(138.910416, 4.85120726, 1080.46936),
+        },
+        {
+          Vector3.new(50.0033913, 5.40119982, 1025.59448),
+          Vector3.new(12.7496023, 4.94986296, 1046.24768),
+        },
+        {
+          Vector3.new(56.9857826, 5.10824966, 1066.79846),
+          Vector3.new(40.124321, 5, 1055.27551),
+        },
+        {
+          Vector3.new(28.1154366, 4.8208971, 1041.24829),
+        },
+        {
+          Vector3.new(8.27422428, 4.80000019, 1034.32092),
+          Vector3.new(-36.9196014, 4.80000019, 1022.45972),
+          Vector3.new(-93.4016876, 5.84888077, 1107.07776),
+          Vector3.new(-134.147461, 5.84888077, 1080.1228),
+        },
+        {
+          Vector3.new(8.27422428, 4.80000019, 1034.32092),
+          Vector3.new(-36.9196014, 4.80000019, 1022.45972),
+          Vector3.new(-69.0564728, 5.87887812, 1101.21545),
+        },
+        {
+          Vector3.new(8.27422428, 4.80000019, 1034.32092),
+          Vector3.new(-36.9196014, 4.80000019, 1022.45972),
+          Vector3.new(-57.2358208, 5.81887817, 1059.91345),
+        },
+        {
+          Vector3.new(104.851845, 4.80013657, 1029.08655),
+          Vector3.new(66.5649185, 11.1366758, 981.947205),
+          Vector3.new(58.9183998, 15.5042267, 969.327759),
+        },
+        {
+          Vector3.new(106.917046, 5.1029253, 1033.20129),
+          Vector3.new(126.421371, 4.80742407, 1017.41754),
+          Vector3.new(109.249374, 4.99999857, 998.975525),
+        },
+        {
+          Vector3.new(37.6123543, 5.1142168, 1041.55664),
+          Vector3.new(8.08811092, 11.3835154, 1087.04956),
+          Vector3.new(3.8377471, 4.81672573, 1051.76331),
+        },
+        {
+          Vector3.new(74.2765732, 4.79785824, 1034.74109),
+          Vector3.new(59.2142448, 5, 1081.58557),
+          Vector3.new(23.250845, 5.6657753, 1021.79108),
+        },
+        {
+          Vector3.new(75.4334259, 5.07404947, 1048.54626),
+          Vector3.new(59.5415268, 9.24949932, 1002.75214),
+          Vector3.new(21.7118225, 26.9064331, 982.54895),
+        },
+        {
+          Vector3.new(86.8510361, 4.95114946, 1012.60217),
+          Vector3.new(78.8645248, 5.21786928, 1063.84338),
+          Vector3.new(39.1454849, 5, 1062.37744),
+        },
+        {
+          Vector3.new(85.5781631, 5.19999838, 1044.32336),
+          Vector3.new(7.32494354, 4.79999876, 1031.84668),
+          Vector3.new(-16.918314, 7.10381889, 999.609253),
+        },
+        {
+          Vector3.new(85.5781631, 5.19999838, 1044.32336),
+          Vector3.new(7.32494354, 4.79999876, 1031.84668),
+          Vector3.new(-60.5333252, 4.90647602, 1025.54321),
+        },
+        {
+          Vector3.new(85.5781631, 5.19999838, 1044.32336),
+          Vector3.new(7.32494354, 4.79999876, 1031.84668),
+          Vector3.new(-76.8479233, 4.87704134, 1009.79724),
+        },
+        {
+          Vector3.new(116.443657, 5.34364605, 1031.54187),
+          Vector3.new(136.55043, 4.80000019, 1068.89758),
+          Vector3.new(96.5291367, 5.04907751, 1055.71301),
+        },
+        {
+          Vector3.new(136.55043, 4.80000019, 1068.89758),
+          Vector3.new(96.5291367, 5.04907751, 1055.71301),
+          Vector3.new(116.443657, 5.34364605, 1031.54187),
+        },
+        {
+          Vector3.new(84.3650131, 4.95895767, 1011.05023),
+          Vector3.new(28.3323727, 5.77999735, 1021.42993),
+          Vector3.new(32.4552689, 5, 1067.22888),
+        },
+      }
+      -- Variables for the zombie, its humanoid, and destination
 
 
 
-          for i,v in pairs(randomWayPoints[math.random(1,#randomWayPoints)]) do
-            local path = PathfindingService:CreatePath()
-            -- Compute the path
-            path:ComputeAsync(zombie.HumanoidRootPart.Position, v)
-            local waypoints = path:GetWaypoints()
-            -- Get the path waypoints
+      for i,v in pairs(randomWayPoints[math.random(1,#randomWayPoints)]) do
+        local path = PathfindingService:CreatePath()
+        -- Compute the path
+        path:ComputeAsync(zombie.HumanoidRootPart.Position, v)
+        local waypoints = path:GetWaypoints()
+        -- Get the path waypoints
 
-            local wayPointParts = {}
-            -- Loop through waypoints
-            local number2 = 0
-            for _, waypoint in pairs(waypoints) do
-              if _G.ai_done then break end
-              number2 = number2 + .5
-              local part = Instance.new("Part")
-              part.Shape = "Ball"
-              part.Material = "Neon"
-              local number = (math.sin(number2) + 1.5) /2
-              part.Size = Vector3.new(number, number, number)
-              part.Position = waypoint.Position
-              part.Anchored = true
-              part.CanCollide = false
-              part.Parent = game.Workspace
-              insert(wayPointParts, part)
-            end
+        local wayPointParts = {}
+        -- Loop through waypoints
+        local number2 = 0
+        for _, waypoint in pairs(waypoints) do
+          if _G.ai_done then break end
+          number2 = number2 + .5
+          local part = Instance.new("Part")
+          part.Shape = "Ball"
+          part.Material = "Neon"
+          local number = (math.sin(number2) + 1.5) /2
+          part.Size = Vector3.new(number, number, number)
+          part.Position = waypoint.Position
+          part.Anchored = true
+          part.CanCollide = false
+          part.Parent = game.Workspace
+          insert(wayPointParts, part)
+        end
 
-            for i, waypoint in pairs(waypoints) do
-              if _G.ai_done then break end
-              wayPointParts[i].BrickColor = BrickColor.new("Bright blue")
-              Zombiehumanoid:MoveTo(waypoint.Position)
-              Zombiehumanoid.MoveToFinished:Wait()
-              wayPointParts[i].BrickColor = BrickColor.new("Fire Yellow")
-            end
-          end
-          doneMoving = true
-        end)
-      while not(doneMoving or clock >_G.maxWaitTimeInLobby)  do
-        clock = clock+.1
-        wait(.1)
+        for i, waypoint in pairs(waypoints) do
+          if _G.ai_done then break end
+          wayPointParts[i].BrickColor = BrickColor.new("Bright blue")
+          Zombiehumanoid:MoveTo(waypoint.Position)
+          Zombiehumanoid.MoveToFinished:Wait()
+          wayPointParts[i].BrickColor = BrickColor.new("Fire Yellow")
+        end
       end
-      _G.ai_done = true
-      Zombiehumanoid:MoveTo(zombie.HumanoidRootPart.Position)
-    end
+      doneMoving = false
+    end)
+  while not(doneMoving or clock >_G.maxWaitTimeInLobby)  do
+    clock = clock+.1
+    wait(.1)
+  end
+  _G.ai_done = false
+  Zombiehumanoid:MoveTo(zombie.HumanoidRootPart.Position)
+end
 
     function autoupgrade()
       if	_G.auto_stat_upgrade then
